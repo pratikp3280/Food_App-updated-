@@ -16,19 +16,19 @@ public class UserDAOImpl implements UserDAO {
 
     // ✅ SQL Queries (corrected & cleaned)
     private static final String INSERT_USER_QUERY = 
-        "INSERT INTO `user` (`name`, `username`, `password`, `email`, `phone`, `address`, `role`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "INSERT INTO `users` (`name`, `username`, `password`, `email`, `phone`, `address`, `role`) VALUES (?, ?, ?, ?, ?, ?, ?)";
     
     private static final String GET_USER_QUERY = 
-        "SELECT * FROM `user` WHERE `userId` = ?";
+        "SELECT * FROM `users` WHERE `user_Id` = ?";
     
     private static final String UPDATE_USER_QUERY = 
-        "UPDATE `user` SET `name` = ?, `username` = ?, `password` = ?, `email` = ?, `phone` = ?, `address` = ?, `role` = ? WHERE `userId` = ?";
+        "UPDATE `users` SET `name` = ?, `username` = ?, `password` = ?, `email` = ?, `phone` = ?, `address` = ?, `role` = ? WHERE `user_Id` = ?";
     
     private static final String DELETE_USER_QUERY = 
-        "DELETE FROM `user` WHERE `userId` = ?";
+        "DELETE FROM `users` WHERE `user_Id` = ?";
     
     private static final String GET_ALL_USERS_QUERY = 
-        "SELECT * FROM `user`";
+        "SELECT * FROM `users`";
 
     
     private static final String GET_USER_BY_USERNAME_QUERY =
@@ -193,7 +193,7 @@ public class UserDAOImpl implements UserDAO {
     // -------------------------------------------------------------------------
     private User extractUser(ResultSet res) throws SQLException {
         // Extracts user data from a single ResultSet record
-        int userId = res.getInt("userId");
+        int userId = res.getInt("user_Id");
         String name = res.getString("name");
         String username = res.getString("username");
         String password = res.getString("password");

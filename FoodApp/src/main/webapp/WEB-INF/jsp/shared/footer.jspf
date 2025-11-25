@@ -1,0 +1,53 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- footer.jspf -->
+<footer class="footer">
+    
+    <div class="footer-container">
+
+        <!-- Brand + Tagline -->
+        <div class="footer-section">
+            <h2 class="footer-logo">FoodApp</h2>
+            <p class="footer-tagline">Delivering happiness, one meal at a time.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.jsp">Home</a></li>
+                <li><a href="restaurants.jsp">Restaurants</a></li>
+                <li><a href="cart.jsp">My Cart</a></li>
+                <li><a href="profile.jsp">My Account</a></li>
+            </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+                <li><a href="#">Help & FAQs</a></li>
+                <li><a href="#">Delivery Info</a></li>
+                <li><a href="#">Cancellation & Refund</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-section">
+            <h3 class="footer-title">Follow Us</h3>
+            <div class="footer-social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Credits -->
+    <div class="footer-bottom">
+        <p>© 2025 FoodApp • Made with ❤️ for learning</p>
+    </div>
+
+</footer>

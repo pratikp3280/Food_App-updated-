@@ -15,7 +15,7 @@ public class TestUserDAO {
 
         // Step 3: Print the result
         if (u != null) {
-            System.out.println("User found: " + u.getName() + " | Email: " + u.getEmail());
+            System.out.println("User found: " + u.getName() + " | Email: " + u.getEmail() + " | Phone: "  + u.getPhone());
         } else {
             System.out.println("User not found!");
         }
