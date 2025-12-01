@@ -1,12 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="../shared/head.jspf" %>
+<%@ include file="../shared/header.jspf" %>
 
-</body>
-</html>
+<h2 class="page-title container">Menus</h2>
+<p class="container">Menus loaded dynamically</p>
+
+<%@ include file="../shared/footer.jspf" %>
