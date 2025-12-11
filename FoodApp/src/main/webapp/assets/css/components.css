@@ -364,5 +364,12 @@
     cursor: pointer;
 }
 
+/* Status Text Badge */
+.status-text {
+    font-weight: bold;
+    color: var(--accent-green); /* green color */
+    font-size: 1.1rem;          /* slightly bigger text */
+    display: inline-block;
+}
 
 

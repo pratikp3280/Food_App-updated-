@@ -1,6 +1,9 @@
 package com.app.dao;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.app.models.MenuItem;
 
 /*It will handle CRUD operations for menu items
@@ -36,4 +39,8 @@ public interface MenuItemDAO {
     
     // if restaurant temporarily runs out of a dish (like “Chicken Biryani”) and needs to mark it unavailable without deleting it.
     void updateAvailability(int menuItemId, boolean isAvailable);
+    
+    Map<Integer, MenuItem> getMenuItemsAsMap(Set<Integer> ids);
+
+
 }

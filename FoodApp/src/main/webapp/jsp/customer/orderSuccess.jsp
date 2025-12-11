@@ -124,7 +124,7 @@
                 Browse Restaurants
             </a>
 
-            <a href="${pageContext.request.contextPath}/orders"
+            <a href="${pageContext.request.contextPath}/orderHistory"
                class="btn btn--secondary">
                 View My Orders
             </a>

@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import com.app.dao.MenuItemDAO;
 import com.app.models.MenuItem;
@@ -261,4 +264,39 @@ public class MenuItemDAOImpl implements MenuItemDAO {
         
         return menuItem;
     }
+    
+    
+ // 🔍 Fetch multiple menu items by a list of IDs (USED FOR ORDER HISTORY)
+    @Override
+    public Map<Integer, MenuItem> getMenuItemsAsMap(Set<Integer> ids) {
+
+        Map<Integer, MenuItem> map = new HashMap<>();
+        if (ids == null || ids.isEmpty()) return map;
+
+        StringBuilder query = new StringBuilder("SELECT * FROM menu_items WHERE menu_item_id IN (");
+        query.append(String.join(",", ids.stream().map(id -> "?").toArray(String[]::new)));
+        query.append(")");
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query.toString())) {
+
+            int index = 1;
+            for (Integer id : ids) stmt.setInt(index++, id);
+
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                MenuItem item = extractMenuItemFromResultSet(rs);
+                map.put(item.getMenuItemId(), item);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return map;
+    }
+    
+    
+
+
 }
